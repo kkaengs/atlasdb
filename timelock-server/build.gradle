@@ -19,7 +19,7 @@ testSets {
     }
 }
 
-suiteTest {
+DbTimeLockSingleLeaderPaxosSuite {
     filter {
         includeTestsMatching "com.palantir.atlasdb.timelock.suite.DbTimeLockSingleLeaderPaxosSuite"
     }
