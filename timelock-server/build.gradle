@@ -17,6 +17,14 @@ testSets {
     dbTimeLockSingleLeaderPaxosSuite {
         imports 'testCommon'
     }
+
+    multiLeaderPaxosSuite {
+        imports 'testCommon'
+    }
+
+    singleLeaderPaxosSuite {
+        imports 'testCommon'
+    }
 }
 
 dbTimeLockSingleLeaderPaxosSuite {
@@ -25,8 +33,22 @@ dbTimeLockSingleLeaderPaxosSuite {
     }
 }
 
+multiLeaderPaxosSuite {
+    filter {
+        includeTestsMatching "com.palantir.atlasdb.timelock.suite.MultiLeaderPaxosSuite"
+    }
+}
+
+singleLeaderPaxosSuite {
+    filter {
+        includeTestsMatching "com.palantir.atlasdb.timelock.suite.SingleLeaderPaxosSuite"
+    }
+}
+
 check.dependsOn integTest
-check.dependsOn suiteTest
+check.dependsOn dbTimeLockSingleLeaderPaxosSuite
+check.dependsOn multiLeaderPaxosSuite
+check.dependsOn singleLeaderPaxosSuite
 
 dependencies {
     compile project(":dropwizard-metrics-hack")
