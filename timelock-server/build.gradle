@@ -15,14 +15,17 @@ testSets {
     }
 
     dbTimeLockSingleLeaderPaxosSuite {
+        dirName = 'suiteTest'
         imports 'testCommon'
     }
 
     multiLeaderPaxosSuite {
+        dirName = 'suiteTest'
         imports 'testCommon'
     }
 
     singleLeaderPaxosSuite {
+        dirName = 'suiteTest'
         imports 'testCommon'
     }
 }
