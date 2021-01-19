@@ -14,14 +14,14 @@ testSets {
         imports 'testCommon'
     }
 
-    suiteTest {
+    DbTimeLockSingleLeaderPaxosSuite {
         imports 'testCommon'
     }
 }
 
 suiteTest {
     filter {
-        includeTestsMatching "com.palantir.atlasdb.timelock.suite.*"
+        includeTestsMatching "com.palantir.atlasdb.timelock.suite.DbTimeLockSingleLeaderPaxosSuite"
     }
 }
 
